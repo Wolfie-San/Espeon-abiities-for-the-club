@@ -1,5 +1,5 @@
                 // ==UserScript==
-// @name         Custom Actions and spells
+// @name         espean abilities
 // @namespace    http://tampermonkey.net/
 // @version      1.10
 // @author       Willow
@@ -8,8 +8,6 @@
 // @match		 https://bondage-europe.com/*
 // @match		 https://www.bondage-europe.com/*
 // @grant        none
-// ==/UserScript==
-
 
 (function() {
     'use strict';
@@ -147,31 +145,35 @@
             // commands defined here are used with /do /command [args]
             // example /do /bind 1
             // binds the first player in the room
-            if(msg.indexOf('/do /seduce') == 0){
+            if(msg.indexOf('/seduce') == 0){
                 //targetting do not change
                 var who = parseInt(msg.substring(msg.indexOf(" ")))
                 var char = ChatRoomCharacter[who-1]
 
+                ChatRoomCharacterUpdate(char);
                 //the custom message to send
-                  msg = Player.Name + ' uses seduce on '+ char.Name+ ' making her feel more sexually appealed to her'
-            } else if(msg.indexOf('/do /attract')==0){
+                msg = Player.Name + ' uses seduce on '+ char.Name+ ' making her feel more sexually appealed to her'
+            } else if(msg.indexOf('/attract')==0){
                 var who = parseInt(msg.substring(msg.indexOf(" ")))
                 var char = ChatRoomCharacter[who-1]
 
                 ChatRoomCharacterUpdate(char);
-      msg = Player.Name + ' uses attract '+ char.Name+ ' feel more interested in her '
-                            } else if(msg.indexOf('/do /calm mind')==0){
-                var who = parseInt(msg.substring(msg.indexOf(" ")))
-                var char = ChatRoomCharacter[who-1]
-                
-                    ChatRoomCharacterUpdate(char);
-      msg = Player.Name + ' uses attract '+ char.Name+ ' feel more interested in her '
-                            } else if(msg.indexOf('/do /charm')==0){
+                msg = Player.Name + ' uses attract on '+ char.Name+ ' making them feel more interested in her '
+
+                            } else if(msg.indexOf('/calm-mind')==0){
                 var who = parseInt(msg.substring(msg.indexOf(" ")))
                 var char = ChatRoomCharacter[who-1]
 
                 ChatRoomCharacterUpdate(char);
-                msg = Player.Name + ' uses charm making '+ char.Name+ ' making herself more adorable to '+ char.Name
+                msg = Player.Name + ' calm mind on '+ char.Name+ ' making her feel more relaxed '
+                            } else if(msg.indexOf('/charm')==0){
+                var who = parseInt(msg.substring(msg.indexOf(" ")))
+                var char = ChatRoomCharacter[who-1]
+
+                ChatRoomCharacterUpdate(char);
+                msg = Player.Name + ' uses charm on '+ char.Name+ ' making herself appeare more adorable to them'
+
+
 
             } else if(msg.indexOf('/sleep')==0){
                 // doesn't seem to work right. need testing
