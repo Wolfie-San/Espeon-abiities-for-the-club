@@ -1,7 +1,7 @@
 Paste the code  into Tampermonkey.
 
 cammands:
-/charm
-/calm mind
-/attract
-/seduce
+/do /charm
+/do /calm-mind
+/do /attract
+/do /seduce
