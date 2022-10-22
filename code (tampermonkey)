@@ -1,0 +1,66 @@
+// ==UserScript==
+// @name         Custom Actions and spells
+// @namespace    http://tampermonkey.net/
+// @version      1.10
+// @author       Willow
+// @match		 https://bondageprojects.elementfx.com/*
+// @match		 https://www.bondageprojects.elementfx.com/*
+// @match		 https://bondage-europe.com/*
+// @match		 https://www.bondage-europe.com/*
+// @grant        none
+// ==/UserScript==
+
+
+(function() {
+    'use strict';
+
+    //changing various parts of the game's code by replacing entire functions with altered ones
+    function main() {
+
+        /**
+ * d20.js
+ *
+ * Javascript library for rolling dice. Supports strings written in a dice-rolling syntax, eg. "d20", "4d6", "1d8+1".
+ *
+ * @author Michael Enger <mike@thelonelycoder.com>
+ * @licence MIT
+
+
+ChatRoomActionMessage = function(msg, target = undefined) {
+            // commands defined here are used with /do /command [args]
+            // example /do /bind 1
+            // binds the first player in the room
+            if(msg.indexOf('/charm') == 0){
+                //targetting do not change
+                var who = parseInt(msg.substring(msg.indexOf(" ")))
+                var char = ChatRoomCharacter[who-1]
+                ChatRoomCharacterUpdate(char);
+                //the custom message to send
+                msg = Player.Name + ' uses charm making '+ char.Name+ ' making herself more adorable to '+ char.Name
+                
+                
+                 if(msg.indexOf('/calm mind') == 0){
+                //targetting do not change
+                var who = parseInt(msg.substring(msg.indexOf(" ")))
+                var char = ChatRoomCharacter[who-1]
+                ChatRoomCharacterUpdate(char);
+                //the custom message to send
+                msg = Player.Name + ' uses calm mind '+ char.Name+ ' relaxed '
+                
+                
+                 if(msg.indexOf('/attract') == 0){
+                //targetting do not change
+                var who = parseInt(msg.substring(msg.indexOf(" ")))
+                var char = ChatRoomCharacter[who-1]
+                ChatRoomCharacterUpdate(char);
+                //the custom message to send
+                msg = Player.Name + ' uses attract '+ char.Name+ ' feel more interested in her '
+                
+                
+                  if(msg.indexOf('/seduce') == 0){
+                //targetting do not change
+                var who = parseInt(msg.substring(msg.indexOf(" ")))
+                var char = ChatRoomCharacter[who-1]
+                ChatRoomCharacterUpdate(char);
+                //the custom message to send
+                msg = Player.Name + ' uses seduce on '+ char.Name+ ' making her feel more sexually appealed to her '
