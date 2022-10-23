@@ -149,18 +149,15 @@
                 //targetting do not change
                 var who = parseInt(msg.substring(msg.indexOf(" ")))
                 var char = ChatRoomCharacter[who-1]
-
                 ChatRoomCharacterUpdate(char);
                 //the custom message to send
                 msg = Player.Name + ' uses seduce on '+ char.Name+ ' making her feel more sexually appealed to her'
             } else if(msg.indexOf('/attract')==0){
                 var who = parseInt(msg.substring(msg.indexOf(" ")))
                 var char = ChatRoomCharacter[who-1]
-
                 ChatRoomCharacterUpdate(char);
                 msg = Player.Name + ' uses attract on '+ char.Name+ ' making them feel more interested in her '
-
-                            } else if(msg.indexOf('/calm-mind')==0){
+            } else if(msg.indexOf('/calm-mind')==0){
                 var who = parseInt(msg.substring(msg.indexOf(" ")))
                 var char = ChatRoomCharacter[who-1]
 
